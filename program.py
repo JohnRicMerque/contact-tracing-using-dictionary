@@ -78,27 +78,30 @@ while True:
         print()
         userCommandChoice = int(input("Please select a command option (1-3): "))
         print()
-    except:
-        print("Invalid input. Make sure to enter a number from (1-3)")
 
     # create navigation to commands based on the input
-    if userCommandChoice == 1:
-        addItem(allPersonalData)
+        if userCommandChoice == 1:
+            addItem(allPersonalData)
 
-    elif userCommandChoice == 2:
-        searchQuery = input("Enter the Fullname of your search query: ")
-        searchProfile(allPersonalData, searchQuery)
+        elif userCommandChoice == 2:
+            searchQuery = input("Enter the Fullname of your search query: ")
+            searchProfile(allPersonalData, searchQuery)
 
-    elif userCommandChoice == 3:
-        exitBoolean = input("Do you wish to exit the program (y/n): ")
-        if exitBoolean.lower() == "y":
-            print("\nBye User!\n")
-            break
+        elif userCommandChoice == 3:
+            exitBoolean = input("Do you wish to exit the program (y/n): ")
+            if exitBoolean.lower() == "y":
+                print("==========================================")
+                print("\nBye User!\n")
+                break
+            else:
+                continue
+
         else:
-            continue
+            print("Command does not exist")
+            
+    except:
+        print("\nInvalid input. Make sure to enter a number from (1-3)")
 
-    else:
-        print("Command does not exist")
 
 
 
