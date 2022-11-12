@@ -16,9 +16,20 @@
 # 		- Option 2: Search, ask full name then display the record
 # 		- Option 3: Ask the user if want to exit or retry.
 
-# PseudoCode
+# for command 1, create a series of user input and store details in a dictionary
+def addItem(dictionary):
+    data = {}
+
+    fullname = input("Fullname: ")
+    age = input("age: ")
+
+    data["Fullname"] = fullname
+    data["age"] = age
+
+    dictionary[fullname] = data
+    print("Profile added!") 
  
-# 1. display menu
+# display menu
 print("\n~~~~~~Menu:~~~~~~")
 print("1 -> Add an item")
 print("2 -> Search")
@@ -26,17 +37,18 @@ print("3 -> Exit (y/n)")
 print("~~~~~~~~~~~~~~~~~\n")
 
 userCommandChoice = ""
+allPersonalData = {}
 
-# 2. ask user input for option selected
+# ask user input for option selected
 try:
     userCommandChoice = int(input("Please select a command option (1-3): "))
 except:
     print("Invalid input. Make sure to enter a number from (1-3)")
 
-# 3. create navigation to commands based on the input
+# create navigation to commands based on the input
 if userCommandChoice == 1:
-    # define a function to add items
-    print("adds items") 
+    addItem(allPersonalData)
+
 elif userCommandChoice == 2:
     # define a function to search items
     print("searches")
@@ -46,7 +58,9 @@ elif userCommandChoice == 3:
 else:
     print("Command does not exist")
 
-# 4. for command 1, create a series of user input and store details in a dictionary
+print(allPersonalData)
+
+
 # 5. for command 2, access the dictionary and display dictionary values
 # 6. for command 3, enclose everything in a loop and add break statement to terminate
 
