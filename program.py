@@ -47,21 +47,21 @@ def addItem(dictionary):
     data["Email"] = email
 
     dictionary[fullname] = data
-    print("Profile has been added!") 
+    print("\033[32mProfile has been added!\033[0m") 
  
 # for command 2, access the dictionary and display dictionary values
 def searchProfile(dictionary, search_query):
     if search_query in dictionary:
-        print("\nWe have found the profile on our database!")
+        print("\n\033[32mWe have found the profile on our database!\033[0m")
         print("==========================================")
         for key,value in dictionary[search_query].items():
             print(key, ":", value)
         print("==========================================")
     else:
-        print("\nItem does not exist in our database.") 
+        print("\n\033[31mItem does not exist in our database.\033[0m") 
 
 # display menu
-print("\nWELCOME TO CONTACT TRACING DATABASE")
+print("\n\033[46mWELCOME TO CONTACT TRACING DATABASE\033[0m")
 print("~~~~~~Menu:~~~~~~")
 print("1 -> Add an item")
 print("2 -> Search")
@@ -100,16 +100,16 @@ while True:
             exitBoolean = input("Do you wish to exit the program (y/n): ")
             if exitBoolean.lower() == "y":
                 print("==========================================")
-                print("\nBye User!\n")
+                print("\n\033[46mBye User!\033[0m\n")
                 break
             else:
                 continue
 
         else:
-            print("Command does not exist")
+            print("\033[31mCommand does not exist\033[0m")
             
     except:
-        print("\nInvalid input. Make sure to enter a number from (1-3)")
+        print("\n\033[31mInvalid input. Make sure to enter a number from (1-3).\033[0m")
 
 
 
