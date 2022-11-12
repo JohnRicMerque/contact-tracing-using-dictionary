@@ -29,14 +29,15 @@
 def addItem(dictionary):
     data = {}
 
+    print("==========================================")
     print("Please fill this form to add a profile.\n")
-
     fullname = input("Fullname: ")
     age = input("Age: ")
     address = input("Address: ")
     gender = input("Gender: ")
     vaccinationStatus = input("Vaccination Status: ")
     email = input("Email: ")
+    print("==========================================")
 
     data["Fullname"] = fullname
     data["Age"] = age
@@ -50,15 +51,14 @@ def addItem(dictionary):
  
 # for command 2, access the dictionary and display dictionary values
 def searchProfile(dictionary, search_query):
-    print("\nWe have found the profile on our database!\n")
-    
     if search_query in dictionary:
+        print("\nWe have found the profile on our database!")
+        print("==========================================")
         for key,value in dictionary[search_query].items():
             print(key, ":", value)
-        print()
-
+        print("==========================================")
     else:
-        print("Item does not exist in our database.") 
+        print("\nItem does not exist in our database.") 
 
 # display menu
 print("\nWELCOME TO CONTACT TRACING DATABASE")
@@ -86,7 +86,7 @@ while True:
         addItem(allPersonalData)
 
     elif userCommandChoice == 2:
-        searchQuery = input("Enter the Fullname: ")
+        searchQuery = input("Enter the Fullname of your search query: ")
         searchProfile(allPersonalData, searchQuery)
 
     elif userCommandChoice == 3:
