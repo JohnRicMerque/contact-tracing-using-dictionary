@@ -29,7 +29,8 @@
 def addItem(dictionary):
     data = {}
 
-    print("\nPlease fill this form to add a profile.")
+    print("Please fill this form to add a profile.\n")
+
     fullname = input("Fullname: ")
     age = input("Age: ")
     address = input("Address: ")
@@ -53,8 +54,8 @@ def searchProfile(dictionary, search_query):
     
     if search_query in dictionary:
         for key,value in dictionary[search_query].items():
-            print(key, " : ", value)
-            print()
+            print(key, ":", value)
+        print()
 
     else:
         print("Item does not exist in our database.") 
@@ -65,16 +66,18 @@ print("~~~~~~Menu:~~~~~~")
 print("1 -> Add an item")
 print("2 -> Search")
 print("3 -> Exit (y/n)")
-print("~~~~~~~~~~~~~~~~~\n")
+print("~~~~~~~~~~~~~~~~~")
 
 userCommandChoice = ""
 allPersonalData = {}
 
+# for command 3, enclose everything in a loop and add break statement to terminate
 while True:
 # ask user input for option selected
     try:
         print()
         userCommandChoice = int(input("Please select a command option (1-3): "))
+        print()
     except:
         print("Invalid input. Make sure to enter a number from (1-3)")
 
@@ -83,19 +86,21 @@ while True:
         addItem(allPersonalData)
 
     elif userCommandChoice == 2:
-        print()
         searchQuery = input("Enter the Fullname: ")
         searchProfile(allPersonalData, searchQuery)
 
     elif userCommandChoice == 3:
-        # define a function to exit 
-        print("exits")
+        exitBoolean = input("Do you wish to exit the program (y/n): ")
+        if exitBoolean.lower() == "y":
+            print("\nBye User!\n")
+            break
+        else:
+            continue
+
     else:
         print("Command does not exist")
 
-    print(allPersonalData)
 
-# for command 3, enclose everything in a loop and add break statement to terminate
 
 
 
