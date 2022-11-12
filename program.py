@@ -20,17 +20,27 @@
 def addItem(dictionary):
     data = {}
 
+    print("\nPlease fill this form to add a profile.")
     fullname = input("Fullname: ")
-    age = input("age: ")
+    age = input("Age: ")
+    address = input("Address: ")
+    gender = input("Gender: ")
+    vaccinationStatus = input("Vaccination Status: ")
+    email = input("Email: ")
 
     data["Fullname"] = fullname
-    data["age"] = age
+    data["Age"] = age
+    data["Address"] = address
+    data["Gender"] = gender
+    data["Vaccination Status"] = vaccinationStatus
+    data["Email"] = email
 
     dictionary[fullname] = data
-    print("Profile added!") 
+    print("\nProfile added!") 
  
 # display menu
-print("\n~~~~~~Menu:~~~~~~")
+print("\nWELCOME TO CONTACT TRACING DATABASE")
+print("~~~~~~Menu:~~~~~~")
 print("1 -> Add an item")
 print("2 -> Search")
 print("3 -> Exit (y/n)")
@@ -60,9 +70,8 @@ else:
 
 print(allPersonalData)
 
-
-# 5. for command 2, access the dictionary and display dictionary values
-# 6. for command 3, enclose everything in a loop and add break statement to terminate
+# for command 2, access the dictionary and display dictionary values
+# for command 3, enclose everything in a loop and add break statement to terminate
 
 
 
