@@ -16,7 +16,16 @@
 # 		- Option 2: Search, ask full name then display the record
 # 		- Option 3: Ask the user if want to exit or retry.
 
-# for command 1, create a series of user input and store details in a dictionary
+# PseudoCode
+
+# 1. display menu
+# 2. ask user input for option selected
+# 2. create navigation to commands based on the input
+# 3. for command 1, create a series of user input and store details in a dictionary
+# 4. for command 2, access the dictionary and display dictionary values
+# 5. for command 3, enclose the everuthing in a loop and add break statement to terminate
+
+# for command 1, create a series of user input and store details in a nested dictionary
 def addItem(dictionary):
     data = {}
 
@@ -38,6 +47,18 @@ def addItem(dictionary):
     dictionary[fullname] = data
     print("\nProfile added!") 
  
+# for command 2, access the dictionary and display dictionary values
+def searchProfile(dictionary, search_query):
+    print("\nWe have found the profile on our database!\n")
+    
+    if search_query in dictionary:
+        for key,value in dictionary[search_query].items():
+            print(key, " : ", value)
+            print()
+
+    else:
+        print("Item does not exist in our database.") 
+
 # display menu
 print("\nWELCOME TO CONTACT TRACING DATABASE")
 print("~~~~~~Menu:~~~~~~")
@@ -49,28 +70,31 @@ print("~~~~~~~~~~~~~~~~~\n")
 userCommandChoice = ""
 allPersonalData = {}
 
+while True:
 # ask user input for option selected
-try:
-    userCommandChoice = int(input("Please select a command option (1-3): "))
-except:
-    print("Invalid input. Make sure to enter a number from (1-3)")
+    try:
+        print()
+        userCommandChoice = int(input("Please select a command option (1-3): "))
+    except:
+        print("Invalid input. Make sure to enter a number from (1-3)")
 
-# create navigation to commands based on the input
-if userCommandChoice == 1:
-    addItem(allPersonalData)
+    # create navigation to commands based on the input
+    if userCommandChoice == 1:
+        addItem(allPersonalData)
 
-elif userCommandChoice == 2:
-    # define a function to search items
-    print("searches")
-elif userCommandChoice == 3:
-    # define a function to exit 
-    print("exits")
-else:
-    print("Command does not exist")
+    elif userCommandChoice == 2:
+        print()
+        searchQuery = input("Enter the Fullname: ")
+        searchProfile(allPersonalData, searchQuery)
 
-print(allPersonalData)
+    elif userCommandChoice == 3:
+        # define a function to exit 
+        print("exits")
+    else:
+        print("Command does not exist")
 
-# for command 2, access the dictionary and display dictionary values
+    print(allPersonalData)
+
 # for command 3, enclose everything in a loop and add break statement to terminate
 
 
