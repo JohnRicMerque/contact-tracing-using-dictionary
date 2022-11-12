@@ -47,7 +47,7 @@ def addItem(dictionary):
     data["Email"] = email
 
     dictionary[fullname] = data
-    print("\nProfile added!") 
+    print("Profile has been added!") 
  
 # for command 2, access the dictionary and display dictionary values
 def searchProfile(dictionary, search_query):
@@ -69,7 +69,16 @@ print("3 -> Exit (y/n)")
 print("~~~~~~~~~~~~~~~~~")
 
 userCommandChoice = ""
-allPersonalData = {}
+allPersonalData = {
+    "John Ric Merque": {
+        "Fullname" : "John Ric Merque",
+        "Age" : "20",
+        "Address" : "Konoha Village",
+        "Gender" : "Male",
+        "Vaccination Status" : "Fully Vaccinated",
+        "Email" : "narutoshippuden@gmail.com"
+    }
+}
 
 # for command 3, enclose everything in a loop and add break statement to terminate
 while True:
